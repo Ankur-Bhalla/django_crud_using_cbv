@@ -1,0 +1,13 @@
+{% extends "crudapp/crudapp_base.html" %}
+{% block body_block %}
+    <div class="jumbotron">
+        <h1>Welcome to the List of Schools Page!</h1>
+            <ol>
+                {% for school in school_list %}
+                    {# Add pk school.id in href so that this will link to app urls.py Detail view page #}
+                    <h2><li><a href="{{school.id}}">{{school.name}}</a></li></h2>
+                {% endfor %}
+            </ol>
+    </div>
+
+{% endblock %}
